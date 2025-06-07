@@ -1,0 +1,186 @@
+
+/**
+ *
+ * @author bruno
+ */
+public class Testando {
+  /**
+     * 
+     * @param nome variavel do tipo string que cadastra o nome do cliente pessoal
+     * @param cpf variavel do tipo string que cadastra o cpf do cliente pessoal
+     * @param senha  variavel do tipo string que cadastra a senha do cliente pessoal
+     * @return retorna um boolean, se for true todos os dados foram cadastrados
+     */
+    public boolean cadastroCP(String nome, String cpf, String senha ){
+        
+        boolean validacao = false;
+        if(cpf.length()==11 && !nome.equals("") && !senha.equals("")){
+            validacao=true;
+        }
+    return validacao;
+        
+    }
+    /**
+     * 
+     * @param nome  variavel do tipo string que cadastra o nome do cliente corporativo
+     * @param cnpj  variavel do tipo string que cadastra o cnpj do cliente corporativo
+     * @param senha  variavel do tipo string que cadastra a senha do cliente corporativo
+     * @param limiteCredito variavel do tipo double que cadastra o limite de credito do cliente corporativo
+     * @return retorna um boolean, se for true todos os dados foram colocados
+     */
+    public boolean cadastroCC(String nome, String cnpj, String senha, double limiteCredito ){
+        
+        boolean validacao = false;
+        if(cnpj.length()==14 && !nome.equals("") && !senha.equals("") && limiteCredito !=0){
+            validacao=true;
+        }
+    return validacao;
+    
+    }
+    /**
+     * 
+     * @param cliente  variavel do tipo string que registra o nome do ciente que esta comprando
+     * @param cpf variavel do tipo string que registra o cpf do cliente pessoal
+     * @param idProduto  variavel do tipo string que define qual produto foi escolhido e o seu id
+     * @param qtdEstoque variavel do tipo inteiro de quantidade de estoque
+     * @param qtd variavel do tipo inteira de quantidade que o cliente quer
+     * @param nPedido cariavel do tipo String que é o numero do pedido
+     * @param precoUnitario variavel do tipo double que define o preco unitario
+     * @param total variavel do tipo double que multiplica o precoUnitario com a qtd para achar o total
+     * @return retorna uma string que define se foi registrado ou não, para isso vai verificar se tem o produto no estoque, se todos os dados foram completados e verificar se o total esta certo
+     */
+    public String registroPedidoCP(String cliente,String cpf, String idProduto, int qtdEstoque, int qtd, String nPedido, double precoUnitario, double total){
+        String status = "nao registrado";
+        
+        if(!cliente.equals("") && cpf.length()==11 && !idProduto.equals("") && qtd != 0 && qtdEstoque>=qtd && !nPedido.equals("") && total == precoUnitario * qtd){
+            status = "registrado";
+        }
+        return status; 
+    }
+    
+        
+    /**
+     * 
+     * @param cliente  variavel do tipo string que registra o nome do ciente que esta comprando
+     * @param cnpj variavel do tipo string que registra o cnpj do cliente corporativo
+     * @param idProduto  variavel do tipo string que define qual produto foi escolhido e o seu id
+     * @param qtdEstoque variavel do tipo inteiro de quantidade de estoque
+     * @param qtd variavel do tipo inteira de quantidade que o cliente quer
+     * @param nPedido cariavel do tipo String que é o numero do pedido
+     * @param precoUnitario variavel do tipo double que define o preco unitario
+     * @param total variavel do tipo double que multiplica o precoUnitario com a qtd para achar o total
+     * @param limiteCredito variavel do tipo double que é o limite de credito do cliente corporativo
+     * @return retorna uma string que define se foi registrado ou não, para isso vai verificar se tem o produto no estoque, se todos os dados foram completados, se esta dentro do limite de credito e verificar se o total esta certo
+     */
+    public String registroPedidoCC(String cliente,String cnpj, String idProduto, int qtdEstoque, int qtd, String nPedido, double precoUnitario, double total, double limiteCredito){
+        String status = "nao registrado";
+        
+        
+        if(!cliente.equals("") && cnpj.length()==14 && !idProduto.equals("") && qtd != 0 && qtdEstoque>=qtd && !nPedido.equals("") && total == precoUnitario * qtd && total<= limiteCredito){
+            status = "registrado";
+        }
+        return status; 
+    }
+    
+
+   
+    
+    /**
+     * 
+     * @param nome variavel do tipo string que define o nome do produto
+     * @param idProduto variavel do tipo string que define o id do produto
+     * @param preco variavel do tipo double para o preço do produto
+     * @param qtdProduto variavel do tipo inteiro quantidade de produto
+     * @return retorna um boolean que se for true o produto foi cadastrado
+     */
+    public boolean cadastrarProduto(String nome, String idProduto, double preco, int qtdProduto){
+        boolean cadastrado = false;
+        if(!nome.equals("") && !idProduto.equals("") && preco!= 0 && qtdProduto!=0){
+            cadastrado = true;
+        }
+        return cadastrado;
+    }
+    
+    /**
+     * 
+     * @param fornNome variavel do tipo string que é o nome do fornecedor
+     * @param produto variavel do tipo string que é o nome do produto
+     * @param data variavel do tipo string que é a data que foi feito o registro
+     * @param qtd variavel do tipo inteiro que é a quantidade comprada
+     * @param qtdEstoque variavel do tipo inteiro que é a quantidade de produtos no estoque
+     * @param pUnitario variavel do tipo double que é o preço unitario do produto
+     * @param total variavel do tipo double que é o total do pUnitario * qtd
+     * @return 
+     */
+    public boolean registroComprasForn(String fornNome, String produto, String data, int qtd, int qtdEstoque, double pUnitario, double total ){
+        boolean registro = false;
+        if(!fornNome.equals("") && !produto.equals("") && !data.equals("") && qtd!=0 && total==qtd*pUnitario && qtdEstoque>=0){
+            registro = true;
+        }
+        return registro;
+    }
+    /**
+     * 
+     * @param cliente variavel do tipo string que é o nome do cliente
+     * @param vezesPedida varivavel do tipo int que é a quantidade de vezes pedida, verifica se tiver 3 ou mais pedidos ele é um cliente frequente
+     * @param produto variavele do tipo string que é o nome do produto
+     * @return retorna um boolean que se for true foi registrado com sucesso
+     */
+    public boolean clientesFrequentes(String cliente,int vezesPedida, String produto) {
+        boolean registro = false;
+        if(!cliente.equals("") && vezesPedida >=3 && !produto.equals("")){
+            registro = true;
+        }
+        return registro; 
+    }
+    
+    /**
+     * para atualizar a quantidade do estoque de um produto depois da venda
+     * @param qtdEstoque variavel do tip inteiro que é a quantidade de produto no estoque atual
+     * @param qtdVendida variavel do tipo inteiro que é a quantidade de produtos vendidos
+     * @return retorna um valor inteiro que é a subtração da qtdVendida e qtdEstoque
+     */
+    public int estoqueProdutoAtualizadoVendido( int qtdEstoque, int qtdVendida){
+        return qtdEstoque-qtdVendida;
+    }
+    
+    /**
+     * para atualizar a quantidade do estoque de um produto depois da venda
+     * @param qtdEstoque variavel do tip inteiro que é a quantidade de produto no estoque atual
+     * @param qtdComprada variavel do tipo inteiro que é a quantidade de produtos vendidos
+     * @return retorna um valor inteiro que é a soma da qtdComprada e qtdEstoque
+     */ 
+    public int estoqueProdutoAtualizadoComprado( int qtdEstoque, int qtdComprada){
+        return qtdEstoque+qtdComprada;
+    }
+    
+    /**
+     * 
+     * @param usuarioValido variavel do tipo string que é um usario valida
+     * @param senhaValida variavel do tipo string que é uma senha valida
+     * @param usuario variavel do tipo string que é um usuario que você colocou
+     * @param senha variavel do tipo string que é a senha que você colocou
+     * @return estorna true se usuarioValido for igual a usuario e senhaValida for igual a senha
+     */
+    public boolean validacaoLogin(String usuarioValido, String senhaValida, String usuario, String senha){
+        boolean status = false;
+            if(usuarioValido.equals(usuario) && senhaValida.equals(senha)){
+                status=true;
+            }
+        return status;
+    }
+    
+    /**
+     * 
+     * @param qtdEstoque variave do tipo int quantidade
+     * @param idProduto variavel do tipo String que é o id do produto
+     * @return retorna um valor boolean que se for true ele alerta q o estoque esta baixo
+     */
+    public String alertaEstoque(int qtdEstoque, String idProduto){
+        String avisoProduto="ok";
+        if (qtdEstoque<=3 && !idProduto.equals("")){
+            avisoProduto="estoque baixo";
+        }
+        return avisoProduto;
+    }
+}
