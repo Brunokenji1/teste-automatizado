@@ -125,6 +125,20 @@ public class TestandoRequisitos {
         assertEquals("ok", test.relMensalVendas(qtdPedidos, nPedido1, nPedido2, nPedido3, p1, p2, p3));
         assertEquals(total, test.calculoTotalVendasMensal(p1, p2, p3));
     }
+    @Test // inserir pedido com três produtos e verificar cálculo automático do total
+    public void calculoAutomaticoRF6C1(){
+        int qtdProdutos = 3;
+        String idProduto1 = "0119";
+        String idProduto2 = "0120";
+        String idProduto3 = "0121";
+        String nPedido = "100";
+        double preco1 = 100.00;
+        double preco2 = 50.00;
+        double preco3 = 150.00;
+        double total = 300.00;
+        assertEquals("ok", test.validaPedido(qtdProdutos,nPedido,idProduto1,idProduto2,idProduto3));
+        assertTrue(test.calculoAutomatico(total,preco1,preco2,preco3),"erro");
+    }
     
 
 
