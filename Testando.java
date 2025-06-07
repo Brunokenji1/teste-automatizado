@@ -213,4 +213,35 @@ public class Testando {
     public double calculoTotalVendasMensal(double p1, double p2, double p3){
         return p1+p2+p3;
     }
+      /**
+     * 
+     * @param qtdProdutos
+     * @param nPedido
+     * @param idProduto1
+     * @param idProduto2
+     * @param idProduto3
+     * @return 
+     */
+    public String validaPedido (int qtdProdutos,String nPedido, String idProduto1, String idProduto2, String idProduto3){
+        String status = "errado";
+        if(qtdProdutos == 3 && !nPedido.equals("") && !idProduto1.equals("") && !idProduto2.equals("") && !idProduto3.equals("")){
+            status="ok";}
+        return status;
+    }
+        /**
+         * 
+         * @param total
+         * @param preco1
+         * @param preco2
+         * @param preco3
+         * @return 
+         */
+    public boolean calculoAutomatico (double total,double preco1, double preco2, double preco3){
+        boolean status = false;
+        if(total==preco1+preco2+preco3){
+            status = true;
+        }
+        return status;
+
+    }
 }
