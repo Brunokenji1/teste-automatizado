@@ -112,6 +112,19 @@ public class TestandoRequisitos {
         String idProduto = "1235689";
         assertEquals("estoque baixo", test.alertaEstoque(qtdEstoque, idProduto));
     }
+    @Test //relatorio mensal de vendas
+    public void relatorioMensalVendas(){
+        int qtdPedidos = 3;
+        String nPedido1= "001";
+        String nPedido2="002";
+        String nPedido3="003";
+        double p1 = 20.00;
+        double p2 = 25.00;
+        double p3 = 30.00;
+        double total = 75.00;
+        assertEquals("ok", test.relMensalVendas(qtdPedidos, nPedido1, nPedido2, nPedido3, p1, p2, p3));
+        assertEquals(total, test.calculoTotalVendasMensal(p1, p2, p3));
+    }
     
 
 
