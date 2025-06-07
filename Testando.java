@@ -215,26 +215,27 @@ public class Testando {
     }
       /**
      * 
-     * @param qtdProdutos
-     * @param nPedido
-     * @param idProduto1
-     * @param idProduto2
-     * @param idProduto3
-     * @return 
+     * @param qtdProdutos do tipo inteiro que é a quantidade de produtos escolhidos
+     * @param nPedido do tipo string que é é o numero do pedido
+     * @param idProduto1 do tipo String que é o numero do id do produto no estoque
+     * @param idProduto2 do tipo string que é o numero do id do produto no estoque
+     * @param idProduto3 do tipo string que é o numero do id do produto no estoque
+     * @return retona ok se todos os dados estiverem completos
      */
     public String validaPedido (int qtdProdutos,String nPedido, String idProduto1, String idProduto2, String idProduto3){
         String status = "errado";
         if(qtdProdutos == 3 && !nPedido.equals("") && !idProduto1.equals("") && !idProduto2.equals("") && !idProduto3.equals("")){
-            status="ok";}
+            status="ok";
+        }
         return status;
     }
         /**
          * 
-         * @param total
-         * @param preco1
-         * @param preco2
-         * @param preco3
-         * @return 
+         * @param total variavel do tipo double que é o total de preco1 + preco2 + preco3
+         * @param preco1 variavel do tipo double que é o preco do produto 1
+         * @param preco2 variavel do tipo double que é o preco do produto 2
+         * @param preco3 variavel do tipo double que é o preco do produto 3
+         * @return retona true se o calculo do total estiver verdadeiro
          */
     public boolean calculoAutomatico (double total,double preco1, double preco2, double preco3){
         boolean status = false;
