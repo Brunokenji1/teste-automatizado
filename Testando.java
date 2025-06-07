@@ -183,4 +183,34 @@ public class Testando {
         }
         return avisoProduto;
     }
+  
+    /**
+     * 
+     * @param qtdPedidos variavel do tipo inteiro que é a quantidade de pedidos no mes
+     * @param nPedido1 variavel do tipo String que é o numero do pedido 1
+     * @param nPedido2 variavel do tipo String que é o numero do pedido 2
+     * @param nPedido3 variavel do tipo String que é o numero do pedido 3
+     * @param p1 variavel do tipo double que é o preço total do primeiro pedido vendido
+     * @param p2 variavel do tipo double que é o preço total do segundo pedido vendido
+     * @param p3 variavel do tipo double que é o preço total do terceiro pedido vendido
+     * @return retorna "ok" se todos os dados foram completos
+     */
+    public String relMensalVendas(int qtdPedidos, String nPedido1, String nPedido2, String nPedido3, double p1, double p2, double p3){
+        String status = "errado";
+        if(qtdPedidos!=0 && !nPedido1.equals("") && !nPedido2.equals("") && !nPedido3.equals("") && p1!=0 && p2!=0 && p3!=0){
+            status="ok";
+        }
+        
+        return status;
+    }
+    /**
+     * verifica se o calulo do total esta certo
+     * @param p1 variavel do tipo double que é o preço total do primeiro pedido vendido
+     * @param p2 variavel do tipo double que é o preço total do segundo pedido vendido
+     * @param p3 variavel do tipo double que é o preço total do terceiro pedido vendido
+     * @return retorna a soma do p1, p2 , p3 que é o total
+     */
+    public double calculoTotalVendasMensal(double p1, double p2, double p3){
+        return p1+p2+p3;
+    }
 }
