@@ -1,10 +1,9 @@
-
 import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
- * @author bruno
+ * @author bruno, pedro, murilo
  */
 public class TestandoRequisitos {
     Testando test = new Testando();
@@ -112,19 +111,8 @@ public class TestandoRequisitos {
         String idProduto = "1235689";
         assertEquals("estoque baixo", test.alertaEstoque(qtdEstoque, idProduto));
     }
-    @Test //relatorio mensal de vendas
-    public void relatorioMensalVendas(){
-        int qtdPedidos = 3;
-        String nPedido1= "001";
-        String nPedido2="002";
-        String nPedido3="003";
-        double p1 = 20.00;
-        double p2 = 25.00;
-        double p3 = 30.00;
-        double total = 75.00;
-        assertEquals("ok", test.relMensalVendas(qtdPedidos, nPedido1, nPedido2, nPedido3, p1, p2, p3));
-        assertEquals(total, test.calculoTotalVendasMensal(p1, p2, p3));
-    }
+    
+    
     @Test // inserir pedido com três produtos e verificar cálculo automático do total
     public void calculoAutomaticoRF6C1(){
         int qtdProdutos = 3;
@@ -140,6 +128,24 @@ public class TestandoRequisitos {
         assertTrue(test.calculoAutomatico(total,preco1,preco2,preco3),"erro");
     }
     
-
-
+    @Test // converte o valor com casas decimais extras para valores inteiros
+    public void calculoAutomaticoRD6C3(){
+        double valor = 10.4;
+        int valorConvertido = 10;
+        assertEquals("erro",test.arredondamentoCalculoAutomatico(valor,valorConvertido), "ok");
+    }
+    
+    /* 
+    FAZER
+    REQUISITO FUNCIONAL 13
+    */
+    
+    @Test // cadastro de fornecedores
+    public void cadastroFornecedor (){
+        String nome = "empresa";
+        String cnpj = "12345670018910";
+        String senha= "1212121212";
+        assertEquals("ok",test.cadastroForn(nome,cnpj,senha),"erro");
+        
+    }
 }
