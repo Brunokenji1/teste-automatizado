@@ -1,7 +1,6 @@
-
 /**
  *
- * @author bruno
+ * @author bruno, pedro e murilo
  */
 public class Testando {
   /**
@@ -81,9 +80,6 @@ public class Testando {
         }
         return status; 
     }
-    
-
-   
     
     /**
      * 
@@ -215,27 +211,26 @@ public class Testando {
     }
       /**
      * 
-     * @param qtdProdutos do tipo inteiro que é a quantidade de produtos escolhidos
-     * @param nPedido do tipo string que é é o numero do pedido
-     * @param idProduto1 do tipo String que é o numero do id do produto no estoque
-     * @param idProduto2 do tipo string que é o numero do id do produto no estoque
-     * @param idProduto3 do tipo string que é o numero do id do produto no estoque
-     * @return retona ok se todos os dados estiverem completos
+     * @param qtdProdutos variavel do tipo inteiro que retorna a quantidade de produtos do pedido 
+     * @param nPedido     variavel do tipo inteiro que retorna a identidicação do pedido
+     * @param idProduto1  variavel do tipo string que retorna a identificação do primeiro produto
+     * @param idProduto2  variavel do tipo string que retorna a identificação do segundo produto
+     * @param idProduto3  variavel do tipo string que retorna a identificação do terceiro produto
+     * @return 
      */
     public String validaPedido (int qtdProdutos,String nPedido, String idProduto1, String idProduto2, String idProduto3){
         String status = "errado";
         if(qtdProdutos == 3 && !nPedido.equals("") && !idProduto1.equals("") && !idProduto2.equals("") && !idProduto3.equals("")){
-            status="ok";
-        }
+            status="ok";}
         return status;
     }
         /**
          * 
-         * @param total variavel do tipo double que é o total de preco1 + preco2 + preco3
-         * @param preco1 variavel do tipo double que é o preco do produto 1
-         * @param preco2 variavel do tipo double que é o preco do produto 2
-         * @param preco3 variavel do tipo double que é o preco do produto 3
-         * @return retona true se o calculo do total estiver verdadeiro
+         * @param total variavel do tipo double que retorna o valor total do pedido 
+         * @param preco1 variavel do tipo double que retorna o preço do primeiro produto
+         * @param preco2 variavel do tipo double que retorna o preço do segundo produto
+         * @param preco3 variavel do tipo double que retorna o preço do terceiro produto
+         * @return 
          */
     public boolean calculoAutomatico (double total,double preco1, double preco2, double preco3){
         boolean status = false;
@@ -243,6 +238,33 @@ public class Testando {
             status = true;
         }
         return status;
-
+    }
+    /**
+     * 
+     * @param valor variavel do tipo double que retorna o valor inserido em double
+     * @param valorConvertido variavel do tipo int que retorna a conversao do valor em double para inteiro
+     * @return 
+     */
+    public String arredondamentoCalculoAutomatico (double valor, int valorConvertido){
+        String status = "erro";
+        valorConvertido = (int) valor;
+        if (valor == (double) valorConvertido) {
+        status = "ok";
+        }
+         return status;
+    }
+    /**
+     * 
+     * @param nome variavel do tipo string que cadastra o nome inserido
+     * @param cnpj variavel do tipo string que cadastra o numero do cpnj
+     * @param senha variavel do tipo string que cadastra a senha de usuario
+     * @return 
+     */
+    public String cadastroForn(String nome, String cnpj, String senha){
+        String validacao = "erro";
+        if(cnpj.length()==14 && !nome.equals("") && !senha.equals("")){
+            validacao="ok";
+        }
+    return validacao;
     }
 }
