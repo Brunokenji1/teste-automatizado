@@ -162,7 +162,14 @@ public class TestandoRequisitos {
         String produto2 = "feijao";
         double valorProduto1 = 100.00;
         double valorProduto2 = 100.00;
-        
+        double resultado = test.ProdutoMaisVendido(produto1, produto2, valorProduto1, valorProduto2);
+        System.out.println("Produto mais vendido: "+ resultado);
+    }
+    @Test // alterar status de pedido(){
+    public void alterarStatusProduto(){
+        String statusPendente = "Pendente";
+        String statusEnviado = "Enviado";
+        assertEquals("Enviado",test.statusProduto(statusPendente, statusEnviado),"Pendente");
         
     }
 }
