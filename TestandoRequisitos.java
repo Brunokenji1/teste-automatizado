@@ -148,4 +148,9 @@ public class TestandoRequisitos {
         assertEquals("ok",test.cadastroForn(nome,cnpj,senha),"erro");
         
     }
+    @Test // evitar duplicidade de CNPJ
+    public void duplicidadeCNPJ (){
+        String cnpj = "12344678910";
+        assertEquals("ok",test.duplicCNPJ(cnpj),"erro");
+    }
 }
