@@ -135,22 +135,34 @@ public class TestandoRequisitos {
         assertEquals("erro",test.arredondamentoCalculoAutomatico(valor,valorConvertido), "ok");
     }
     
-    /* 
-    FAZER
-    REQUISITO FUNCIONAL 13
-    */
-    
     @Test // cadastro de fornecedores
     public void cadastroFornecedor (){
         String nome = "empresa";
         String cnpj = "12345670018910";
         String senha= "1212121212";
         assertEquals("ok",test.cadastroForn(nome,cnpj,senha),"erro");
-        
+       
     }
     @Test // evitar duplicidade de CNPJ
     public void duplicidadeCNPJ (){
-        String cnpj = "12344678910";
+        String cnpj = "12345678910";
         assertEquals("ok",test.duplicCNPJ(cnpj),"erro");
+    }
+    @Test // atualizar dados de fornecedor existente
+    public void atualizarDadosFornecedor(){
+        String nome1 = "Pedro";
+        String nome2 = "Bruno";
+        String cnpj1 = "12345678910";
+        String cnpj2 = "11345678910";
+        assertTrue(test.atualizarFornecedor(nome1,nome2,cnpj1,cnpj2),"erro");
+    }
+    @Test // visualizar produtos mais vendidos
+    public void produtosMaisVendidos(){
+        String produto1 = "arroz";
+        String produto2 = "feijao";
+        double valorProduto1 = 100.00;
+        double valorProduto2 = 100.00;
+        
+        
     }
 }
