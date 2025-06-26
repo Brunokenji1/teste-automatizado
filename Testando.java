@@ -297,8 +297,8 @@ public class Testando {
     }
     public String statusProduto (String statusPendente, String statusEnviado){
         String status = statusPendente;
-        String condicao = "enviado";
-        if(condicao.equals("enviado")){
+        String condicao = "Enviado";
+        if(condicao.equals("Enviado")){
         status = statusEnviado;
         } else {
             status = statusPendente;
