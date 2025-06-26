@@ -286,7 +286,23 @@ public class Testando {
         }
         return status;
     }
-    public String ProdutoMaisVendido(String ){
-        
+    public double ProdutoMaisVendido(String produto1,String produto2, double valorProduto1, double valorProduto2){
+        double maisVendido;
+        if(valorProduto1>valorProduto2){
+            maisVendido = valorProduto1;
+        } else{
+            maisVendido = valorProduto2;
+        }
+        return maisVendido;
+    }
+    public String statusProduto (String statusPendente, String statusEnviado){
+        String status = statusPendente;
+        String condicao = "enviado";
+        if(condicao.equals("enviado")){
+        status = statusEnviado;
+        } else {
+            status = statusPendente;
+                    }
+        return status;
     }
 }
