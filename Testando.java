@@ -274,9 +274,19 @@ public class Testando {
      */
     public String duplicCNPJ (String cnpj){
         String validacao = "erro";
-        if (cnpj != "12345678910"){
+        if (!cnpj.equals("12355678910")){
             validacao = "ok";
         }
     return validacao;
+    }
+    public boolean atualizarFornecedor(String nome1, String nome2, String cnpj1, String cnpj2){
+        boolean status = false;
+        if (!nome2.equals(nome1) || !cnpj1.equals(cnpj2)){
+            status = true;
+        }
+        return status;
+    }
+    public String ProdutoMaisVendido(String ){
+        
     }
 }
