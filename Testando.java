@@ -279,6 +279,14 @@ public class Testando {
         }
     return validacao;
     }
+    /**
+     * 
+     * @param nome1 variavel do tipo String que representa o nome antes da atualização
+     * @param nome2 variavel do tipo String que representa o nome depois da atualização
+     * @param cnpj1 variavel do tipo double que repreesenta o cnpj antes da atualização
+     * @param cnpj2 variavel do tipo double que representa o cnpj depois da atualização
+     * @return 
+     */
     public boolean atualizarFornecedor(String nome1, String nome2, String cnpj1, String cnpj2){
         boolean status = false;
         if (!nome2.equals(nome1) || !cnpj1.equals(cnpj2)){
@@ -286,6 +294,14 @@ public class Testando {
         }
         return status;
     }
+    /**
+     * 
+     * @param produto1 variavel do tipo String que representa o produto relacionado ao valor1
+     * @param produto2 variavel do tipo String  que representa o produto relacionado ao valor2
+     * @param valorProduto1 variavel do tipo double que representa o valor relacionado ao produto1
+     * @param valorProduto2 variavel do tipo double que representa o valro relacionado ao produto2
+     * @return 
+     */
     public double ProdutoMaisVendido(String produto1,String produto2, double valorProduto1, double valorProduto2){
         double maisVendido;
         if(valorProduto1>valorProduto2){
@@ -295,6 +311,13 @@ public class Testando {
         }
         return maisVendido;
     }
+    /**
+     * 
+     * @param statusPendente variavel do tipo String que representa o status de envio "Pendente"
+     * @param statusEnviado variavel do tipo String que representa o stataus de envio "Enviado"
+     * 
+     * @return 
+     */
     public String statusProduto (String statusPendente, String statusEnviado){
         String status = statusPendente;
         String condicao = "Enviado";
