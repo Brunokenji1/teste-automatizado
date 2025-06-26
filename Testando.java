@@ -267,4 +267,16 @@ public class Testando {
         }
     return validacao;
     }
+      /**
+     * 
+     * @param cnpj variavel do tipo String que pega o cnpj
+     * @return retorna um valor String de "ok" se a condição do if estiver certo ou "erro" se a condição não estivar certo
+     */
+    public String duplicCNPJ (String cnpj){
+        String validacao = "erro";
+        if (cnpj != "12345678910"){
+            validacao = "ok";
+        }
+    return validacao;
+    }
 }
