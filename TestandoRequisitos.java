@@ -170,6 +170,33 @@ public class TestandoRequisitos {
         String statusPendente = "Pendente";
         String statusEnviado = "Enviado";
         assertEquals("Enviado",test.statusProduto(statusPendente, statusEnviado),"Pendente");
-        
+    }
+    @Test // visualizar pedidos filtrados por status
+    public void filtroPedidosStatus(){
+        String filtroDisp = "Disponivel";
+        String filtroIndisp = "Indisponivel";
+        assertEquals("Disponivel",test.visualizarPedidosFiltro(filtroDisp, filtroIndisp),"Indisponivel");
+    }
+    @Test // impedir alteração de status após entregue
+    public void alteraçãoStatusEntregue(){
+        String entregue = "Entregue";
+        String disponivel = "disponivel";
+        String indisponivel = "indisponivel";
+        assertEquals("Entregue",test.alterarEntregue(entregue,disponivel,indisponivel),"disponivel");
+    }
+    @Test // pesquisar cliente por nome
+    public void pesquisarCliente(){
+        String cliente1 = "Pedro";
+        String cliente2 = "Bruno";
+        String cliente3 = "Murilo";
+        assertEquals("Pedro",test.pesquisaCliente(cliente1,cliente2,cliente3));
+    }
+    @Test // buscar produto por codigo
+    public void buscarProdutoCodigo(){
+        String produto1 = "Produto1";
+        String codigo1 = "121314";
+        String produto2 = "Produto2";
+        String codigo2 = "212324";
+        assertEquals("Produto1","121314",test.pesquisaCliente(produto1,codigo1,produto2,codigo2),"");
     }
 }
