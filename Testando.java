@@ -328,4 +328,39 @@ public class Testando {
                     }
         return status;
     }
+    /**
+     * 
+     * @param filtroDisp
+     * @param filtroIndisp
+     * @return 
+     */
+    public String visualizarPedidosFiltro (String filtroDisp, String filtroIndisp){
+        String status = filtroIndisp;
+        if(!status.equals(filtroIndisp)){
+            status = filtroDisp;
+        } else {
+            status = filtroDisp;
+        }
+        return status;
+    }
+    /**
+     * 
+     * @param entregue
+     * @param disponivel
+     * @param indisponivel
+     * @return 
+     */
+    public String alterarEntregue (String entregue, String disponivel, String indisponivel){
+        String status = entregue;
+        if(!status.equals(entregue)){
+            status = disponivel;
+        }else {
+            status.equals(disponivel);
+        }
+        return status;
+    }
+    public String pesquisaCliente (String cliente1, String cliente2, String cliente3){
+        String nome = cliente1;
+        return nome;
+    }
 }
